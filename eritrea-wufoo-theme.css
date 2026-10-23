@@ -1,41 +1,47 @@
-/* Soft Eritrean flag-inspired Wufoo theme */
-html, body {
-  background: #f0fbf1 !important;
+/* Eritrean flag-inspired soft triangle for Wufoo */
+:root {
+  --flag-triangle: conic-gradient(from 90deg at 100% 50%, #f5b6c0 0deg 180deg, #bcebc2 180deg 270deg, #b8daf7 270deg 360deg);
 }
+/* True red wedge points right: use layered polygons instead of parallel stripes. */
+html, body { min-height: 100%; background: #eef8f3 !important; }
 body {
-  background-image: linear-gradient(160deg,
-    #d8f4d9 0%, #d8f4d9 24%,
-    #f8d9df 24%, #f8d9df 74%,
-    #d6eafd 74%, #d6eafd 100%) !important;
+  background-image: linear-gradient(rgba(255,255,255,.30),rgba(255,255,255,.30)),
+    linear-gradient(153deg, #bcebc2 0%, #bcebc2 28%, #f5b6c0 28%, #f5b6c0 73%, #b8daf7 73%) !important;
   background-attachment: fixed !important;
 }
+/* Exact triangular flag geometry with clip-path layers. */
 #container {
-  background-color: #f8d9df !important;
-  background-image: linear-gradient(160deg,
-    rgba(216,244,217,.90) 0%, rgba(216,244,217,.90) 24%,
-    rgba(248,217,223,.90) 24%, rgba(248,217,223,.90) 74%,
-    rgba(214,234,253,.90) 74%, rgba(214,234,253,.90) 100%) !important;
-  background-repeat: no-repeat !important;
-  border: 1px solid rgba(255,255,255,.85) !important;
-  box-shadow: 0 3px 14px rgba(30,55,75,.12);
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,.75);
 }
-/* Preserve the existing header/logo flags */
-#header, #header h2, #header div, #header p,
-form.wufoo label.desc, form.wufoo legend.desc,
-form.wufoo .section h3, form.wufoo .section div,
-form.wufoo .instruct, form.wufoo .instruct small,
-form.wufoo li, form.wufoo li span, form.wufoo li div,
-form.wufoo li p, form.wufoo .subfield, form.wufoo .subfield label {
-  color: #192b3b !important;
+#container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #bcebc2;
+  clip-path: polygon(0 0,100% 0,100% 50%,0 0);
+  pointer-events: none;
 }
-form.wufoo li, form.wufoo li.focused, form.wufoo li:hover {
-  background-color: transparent !important;
+#container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #b8daf7;
+  clip-path: polygon(0 100%,100% 100%,100% 50%);
+  pointer-events: none;
 }
-form.wufoo input.text, form.wufoo textarea.textarea,
-form.wufoo select.select, form.wufoo input.file {
-  background: #ffffff !important;
-  color: #172331 !important;
-  border: 1px solid #bfcbd3 !important;
+/* Red triangle is the base, with green and blue overlay triangles. */
+#container { background-color: #f5b6c0 !important; }
+#container, #container * { color: #14243a; }
+#header, #header * { background-color: transparent !important; }
+form.wufoo li, form.wufoo li.focused, form.wufoo .buttons { background: transparent !important; }
+form.wufoo label, form.wufoo .desc, form.wufoo .instruct, #header h2, #header div { color: #14243a !important; }
+form.wufoo input.text, form.wufoo textarea.textarea, form.wufoo select {
+  background: #fff !important;
+  color: #14243a !important;
+  border: 1px solid #aebfcb !important;
 }
-form.wufoo .buttons { background: transparent !important; }
-form.wufoo .buttons input.btTxt { color: #172331 !important; }
