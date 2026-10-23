@@ -1,47 +1,72 @@
-/* Eritrean flag-inspired soft triangle for Wufoo */
-:root {
-  --flag-triangle: conic-gradient(from 90deg at 100% 50%, #f5b6c0 0deg 180deg, #bcebc2 180deg 270deg, #b8daf7 270deg 360deg);
+
+/* Soft Eritrean flag triangle for Wufoo */
+
+html, body {
+  background: #f1f8f3 !important;
 }
-/* True red wedge points right: use layered polygons instead of parallel stripes. */
-html, body { min-height: 100%; background: #eef8f3 !important; }
-body {
-  background-image: linear-gradient(rgba(255,255,255,.30),rgba(255,255,255,.30)),
-    linear-gradient(153deg, #bcebc2 0%, #bcebc2 28%, #f5b6c0 28%, #f5b6c0 73%, #b8daf7 73%) !important;
-  background-attachment: fixed !important;
-}
-/* Exact triangular flag geometry with clip-path layers. */
+
+/* Form background */
 #container {
-  position: relative;
+  position: relative !important;
   isolation: isolate;
-  background: transparent !important;
-  border: 1px solid rgba(255,255,255,.75);
+  background: #f8dce2 !important;
+  border: 1px solid #ffffff !important;
 }
+
+/* Green upper triangle */
 #container::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
+  background: #daf3dc;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 50%
+  );
   z-index: -1;
-  background: #bcebc2;
-  clip-path: polygon(0 0,100% 0,100% 50%,0 0);
   pointer-events: none;
 }
+
+/* Blue lower triangle */
 #container::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
+  background: #d9eafb;
+  clip-path: polygon(
+    0 100%,
+    100% 50%,
+    100% 100%
+  );
   z-index: -1;
-  background: #b8daf7;
-  clip-path: polygon(0 100%,100% 100%,100% 50%);
   pointer-events: none;
 }
-/* Red triangle is the base, with green and blue overlay triangles. */
-#container { background-color: #f5b6c0 !important; }
-#container, #container * { color: #14243a; }
-#header, #header * { background-color: transparent !important; }
-form.wufoo li, form.wufoo li.focused, form.wufoo .buttons { background: transparent !important; }
-form.wufoo label, form.wufoo .desc, form.wufoo .instruct, #header h2, #header div { color: #14243a !important; }
-form.wufoo input.text, form.wufoo textarea.textarea, form.wufoo select {
-  background: #fff !important;
+
+/* Keep all form sections transparent */
+form.wufoo,
+form.wufoo li,
+form.wufoo li.focused,
+form.wufoo .buttons,
+#header {
+  background: transparent !important;
+}
+
+/* Readable text */
+#container,
+#header,
+form.wufoo label,
+form.wufoo .desc,
+form.wufoo .instruct,
+form.wufoo .section {
   color: #14243a !important;
-  border: 1px solid #aebfcb !important;
+}
+
+/* White input fields */
+form.wufoo input.text,
+form.wufoo textarea,
+form.wufoo select {
+  background: #ffffff !important;
+  color: #14243a !important;
+  border: 1px solid #c4ccd5;
 }
