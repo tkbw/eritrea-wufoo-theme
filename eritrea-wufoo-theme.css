@@ -1,34 +1,41 @@
-/* Eritrean flag-inspired Wufoo theme. Keep existing logo/header image. */
-html { background: #d0ffd0; }
-body { background: #d0ffd0; }
-#container {
-  background-color: #e40035;
-  background-image: linear-gradient(160deg,
-    #12ad2b 0%, #12ad2b 24%,
-    #e40035 24%, #e40035 74%,
-    #418fde 74%, #418fde 100%);
-  background-repeat: no-repeat;
-  border-color: #c6d6c6;
+/* Soft Eritrean flag-inspired Wufoo theme */
+html, body {
+  background: #f0fbf1 !important;
 }
-/* Wufoo places the logo in the form header: don't replace its image. */
+body {
+  background-image: linear-gradient(160deg,
+    #d8f4d9 0%, #d8f4d9 24%,
+    #f8d9df 24%, #f8d9df 74%,
+    #d6eafd 74%, #d6eafd 100%) !important;
+  background-attachment: fixed !important;
+}
+#container {
+  background-color: #f8d9df !important;
+  background-image: linear-gradient(160deg,
+    rgba(216,244,217,.90) 0%, rgba(216,244,217,.90) 24%,
+    rgba(248,217,223,.90) 24%, rgba(248,217,223,.90) 74%,
+    rgba(214,234,253,.90) 74%, rgba(214,234,253,.90) 100%) !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(255,255,255,.85) !important;
+  box-shadow: 0 3px 14px rgba(30,55,75,.12);
+}
+/* Preserve the existing header/logo flags */
 #header, #header h2, #header div, #header p,
 form.wufoo label.desc, form.wufoo legend.desc,
 form.wufoo .section h3, form.wufoo .section div,
-form.wufoo .instruct, form.wufoo .instruct small {
-  color: #ffffff !important;
+form.wufoo .instruct, form.wufoo .instruct small,
+form.wufoo li, form.wufoo li span, form.wufoo li div,
+form.wufoo li p, form.wufoo .subfield, form.wufoo .subfield label {
+  color: #192b3b !important;
 }
-form.wufoo li, form.wufoo li.focused { background: transparent !important; }
-form.wufoo li span, form.wufoo li div, form.wufoo li p,
-form.wufoo .subfield, form.wufoo .subfield label { color: #ffffff; }
+form.wufoo li, form.wufoo li.focused, form.wufoo li:hover {
+  background-color: transparent !important;
+}
 form.wufoo input.text, form.wufoo textarea.textarea,
 form.wufoo select.select, form.wufoo input.file {
   background: #ffffff !important;
-  color: #1b1b1b !important;
-  border: 1px solid #777777;
+  color: #172331 !important;
+  border: 1px solid #bfcbd3 !important;
 }
 form.wufoo .buttons { background: transparent !important; }
-form.wufoo .buttons input.btTxt { color: #111111; }
-/* Small screens: retain legible labels and controls. */
-@media (max-width: 600px) {
-  #container { background-image: linear-gradient(160deg, #12ad2b 0%, #12ad2b 20%, #e40035 20%, #e40035 78%, #418fde 78%, #418fde 100%); }
-}
+form.wufoo .buttons input.btTxt { color: #172331 !important; }
