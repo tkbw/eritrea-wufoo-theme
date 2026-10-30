@@ -1,9 +1,9 @@
-/* 21st YPFDJ Euro Conference — Wufoo visual theme */
-/* This stylesheet changes appearance only, not questions or form logic. */
+/* 21st YPFDJ Euro Conference — registration form theme */
+/* Only presentation is changed; form fields and validation are untouched. */
 :root { --navy:#102650; --border:#c3d5e8; }
 html { background:#dbe9f2 !important; }
 body {
-  background:#dbe9f2 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background2.jpg') center top / cover fixed no-repeat !important;
+  background:#dbe9f2 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background.jpg') center top / cover fixed no-repeat !important;
   color:var(--navy) !important;
   font-family:Arial,Helvetica,sans-serif !important;
 }
@@ -17,17 +17,35 @@ body {
   border-radius:12px !important;
   box-shadow:0 12px 38px rgba(15,38,65,.23) !important;
   overflow:hidden !important;
+  position:relative !important;
 }
-/* Existing banner appears at top of form, without adding a second image. */
+/* Wufoo branding is an h1#logo immediately inside #container, not #header.
+   Hide both the element and its anchor, with specificity for redesigned themes. */
+html#redesigned-theme-2018 body#public div#container > h1#logo,
+html#redesigned-theme-2018 body#public div#container > h1#logo > a,
+body#public #container > #logo,
+body#public #container > #logo > a,
+#container > h1#logo,
+#container > h1#logo > a {
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+/* The banner is a pseudo-element on the form header. */
 #header {
+  display:block !important;
   height:auto !important;
   min-height:0 !important;
   margin:0 !important;
   padding:0 !important;
   border:0 !important;
-  background:transparent !important;
+  background:none !important;
   box-shadow:none !important;
-  overflow:visible !important;
+  overflow:hidden !important;
 }
 #header::before {
   content:"" !important;
@@ -36,124 +54,43 @@ body {
   aspect-ratio:1857 / 768;
   background:#e7f0f7 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png') center / 100% 100% no-repeat !important;
 }
-/* Hide only the Wufoo branding image/link, not the title or description. */
-#header #logo, #header .logo, #header a[href*="wufoo.com"] img,
-#header img[alt*="Wufoo"], #header img[alt*="WuFoo"] {
-  display:none !important;
-}
-/* Wufoo can render its title/description inside #header OR .info. */
-#header h1, #header h2, #header h3,
-form.wufoo .info h1, form.wufoo .info h2,
-form.wufoo header.info h1, form.wufoo header.info h2 {
+/* Suppress any legacy heading inside the banner header only. */
+#header > * { display:none !important; }
+/* Some Wufoo redesigned themes do not include #header; place banner before form
+   instead. In the actual inspected markup, #container contains #logo and form. */
+#container > form.wufoo::before {
+  content:"" !important;
   display:block !important;
-  visibility:visible !important;
-  position:static !important;
-  font:700 18px/1.3 Arial,Helvetica,sans-serif !important;
+  width:100% !important;
+  aspect-ratio:1857 / 768;
+  background:#e7f0f7 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png') center / 100% 100% no-repeat !important;
+}
+/* If a header exists, avoid displaying the banner twice. */
+#container:has(> #header) > form.wufoo::before { display:none !important; }
+form.wufoo {
+  background:transparent !important;
   color:var(--navy) !important;
-  text-align:center !important;
-  margin:0 0 5px !important;
-  padding:0 !important;
+  margin-top:0 !important;
 }
-#header p, #header div:not(.logo),
-form.wufoo .info div, form.wufoo .info p {
-  visibility:visible !important;
-  color:#304b6a !important;
-  font:400 12px/1.45 Arial,Helvetica,sans-serif !important;
-  text-align:center !important;
-}
-/* Give title/description a neat section directly below the banner. */
-#header > h1, #header > h2, #header > h3 { padding:12px 18px 0 !important; }
-#header > p, #header > div:not(.logo) { margin:0 !important; padding:0 18px 12px !important; }
-form.wufoo { background:transparent !important; color:var(--navy) !important; }
 form.wufoo .info, form.wufoo header.info {
-  display:block !important;
-  visibility:visible !important;
-  position:static !important;
   padding:12px 18px 10px !important;
   margin:0 0 4px !important;
   border-bottom:1px solid #e2eaf2 !important;
   text-align:center !important;
 }
-form.wufoo .info div, form.wufoo .info p { margin:0 !important; padding:0 !important; }
-form.wufoo ul { margin-top:0 !important; padding-top:0 !important; }
-form.wufoo li, form.wufoo li.focused {
-  background:transparent !important;
-  padding-top:5px !important;
-  padding-bottom:5px !important;
-  margin-bottom:0 !important;
-}
-form.wufoo label.desc, form.wufoo legend.desc {
-  font:700 12px/1.35 Arial,Helvetica,sans-serif !important;
+form.wufoo .info h1, form.wufoo .info h2,
+form.wufoo header.info h1, form.wufoo header.info h2 {
+  font:700 18px/1.25 Arial,Helvetica,sans-serif !important;
   color:var(--navy) !important;
-  margin-bottom:3px !important;
+  text-align:center !important;
+  margin:0 0 5px !important;
+  padding:0 !important;
 }
-form.wufoo li span label, form.wufoo .subfield label {
-  font-size:10px !important;
-  color:#506a89 !important;
+form.wufoo .info div, form.wufoo .info p {
+  font:400 12px/1.45 Arial,Helvetica,sans-serif !important;
+  color:#304b6a !important;
+  text-align:center !important;
+  margin:0 !important;
+  padding:0 !important;
 }
-/* Preserve Wufoo's own input layout and widths. */
-form.wufoo input.text, form.wufoo input.password,
-form.wufoo textarea.textarea, form.wufoo select.select {
-/* Final adjustment: hide Wufoo branding above conference banner */
-#logo,
-#header #logo,
-#container > #logo,
-#container > a[href*="wufoo.com"] {
-  display: none !important;
-}
-
-/* Remove empty space above the conference banner */
-#header {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#container {
-  padding-top: 0 !important;
-}
-
-/* Let the conference banner follow the rounded top corners */
-#header::before {
-  border-radius: 12px 12px 0 0 !important;
-}
-/* Remove Wufoo branding without hiding the conference banner */
-#container > #header > h1,
-#container > #header > h2,
-#container > #header > p,
-#container > #header > a,
-#container > #header > div,
-#container > #header > img {
-  display: none !important;
-}
-
-/* Keep the banner at the very top */
-#container > #header {
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  min-height: 0 !important;
-}
-
-/* Remove Wufoo's default header background */
-#container > #header {
-  background: transparent !important;
-}
-/* Hide the actual Wufoo logo identified in Inspect */
-html body#public #container h1#logo,
-html body#public #container h1#logo a {
-  display: none !important;
-}
-
-/* Remove any space reserved for the logo */
-html body#public #container h1#logo {
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-}
-
-/* Keep the conference form aligned at the top */
-html body#public #container form.wufoo {
-  margin-top: 0 !important;
-}
+form.wufoo ul { margin-top:0 !important; padding-top:0 !important; }
