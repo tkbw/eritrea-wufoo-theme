@@ -3,7 +3,7 @@
 :root { --navy:#102650; --border:#c3d5e8; }
 html { background:#dbe9f2 !important; }
 body {
-  background:#dbe9f2 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background.jpg') center top / cover fixed no-repeat !important;
+  background:#dbe9f2 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background2.jpg') center top / cover fixed no-repeat !important;
   color:var(--navy) !important;
   font-family:Arial,Helvetica,sans-serif !important;
 }
