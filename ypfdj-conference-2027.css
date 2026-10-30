@@ -116,3 +116,25 @@ form.wufoo textarea.textarea, form.wufoo select.select {
 #header::before {
   border-radius: 12px 12px 0 0 !important;
 }
+/* Remove Wufoo branding without hiding the conference banner */
+#container > #header > h1,
+#container > #header > h2,
+#container > #header > p,
+#container > #header > a,
+#container > #header > div,
+#container > #header > img {
+  display: none !important;
+}
+
+/* Keep the banner at the very top */
+#container > #header {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Remove Wufoo's default header background */
+#container > #header {
+  background: transparent !important;
+}
