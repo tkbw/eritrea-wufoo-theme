@@ -13,7 +13,7 @@ body { background:#e7eff6 !important; color:var(--ypfdj-navy) !important; }
   overflow:hidden !important;
 }
 /* Separate decorative banner, so Wufoo's title never overlaps the image. */
-#container::before {
+#header::before {
   content:"" !important;
   display:block !important;
   width:100% !important;
