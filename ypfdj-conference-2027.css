@@ -138,3 +138,22 @@ form.wufoo textarea.textarea, form.wufoo select.select {
 #container > #header {
   background: transparent !important;
 }
+/* Hide the actual Wufoo logo identified in Inspect */
+html body#public #container h1#logo,
+html body#public #container h1#logo a {
+  display: none !important;
+}
+
+/* Remove any space reserved for the logo */
+html body#public #container h1#logo {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Keep the conference form aligned at the top */
+html body#public #container form.wufoo {
+  margin-top: 0 !important;
+}
