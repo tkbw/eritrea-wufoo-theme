@@ -1,78 +1,84 @@
-/* 21st YPFDJ Euro Conference — compact Wufoo theme
-   Visual styling only; does not alter form questions or validation. */
-:root { --navy:#102d50; --blue:#07538d; }
-html, body { background:#dce9f3 !important; }
-body { color:var(--navy) !important; font-family:Arial,Helvetica,sans-serif !important; }
+/* 21st YPFDJ Euro Conference — Wufoo Newfangled theme */
+/* Uses two files hosted alongside this stylesheet on GitHub Pages. */
+html,body { background-color:#cbd9e6 !important; }
+body {
+  background-image:url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-rome-background.jpg') !important;
+  background-position:center top !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+  color:#102650 !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+}
 #container {
-  width:calc(100% - 24px) !important;
-  max-width:640px !important;
-  margin:18px auto !important;
-  background:#fff !important;
-  border:1px solid #d5e1ed !important;
-  border-radius:12px !important;
-  box-shadow:0 12px 35px rgba(16,45,80,.16) !important;
-  overflow:hidden !important;
+  box-sizing:border-box !important;
+  width:calc(100% - 32px) !important;
+  max-width:650px !important;
+  margin:215px auto 32px !important;
+  border:1px solid rgba(255,255,255,.8) !important;
+  border-radius:13px !important;
+  background:rgba(255,255,255,.96) !important;
+  box-shadow:0 12px 34px rgba(10,30,55,.28) !important;
+  overflow:visible !important;
+  position:relative !important;
 }
-/* Conference banner above all Wufoo content. */
-#container::before {
-  content:"" !important;
+/* Full-width conference banner above the card */
+#container:before {
+  content:'' !important;
   display:block !important;
-  width:100% !important;
-  aspect-ratio:1875 / 768;
-  background:#e8f1f8 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png') center / 100% 100% no-repeat !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:calc(100% + 10px) !important;
+  transform:translateX(-50%) !important;
+  width:min(960px, calc(100vw - 12px)) !important;
+  aspect-ratio:1857/768 !important;
+  background:url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png') center / contain no-repeat !important;
+  pointer-events:none !important;
 }
-/* Remove the redundant Wufoo-branded header; the conference banner is above. */
-#header { display:none !important; }
-form.wufoo { background:#fff !important; color:var(--navy) !important; }
-/* Newfangled puts the title/description in the .info block. */
-form.wufoo .info {
-  padding:12px 16px 10px !important;
-  margin:0 0 8px !important;
-  border-bottom:1px solid #e3eaf2 !important;
-  text-align:left !important;
+/* Hide only the Wufoo-branded placeholder header, not the registration title */
+#logo, #header { display:none !important; }
+form.wufoo { background:transparent !important; color:#102650 !important; }
+form.wufoo .info { padding:16px 20px 12px !important; margin:0 0 6px !important; border-bottom:1px solid #dbe5ee !important; }
+form.wufoo .info h1, form.wufoo .info h2, form.wufoo .info h2 *, form.wufoo .info h1 * {
+  color:#102650 !important; font:700 20px/1.3 Georgia,serif !important;
+  text-align:center !important; margin:0 0 6px !important; padding:0 !important;
 }
-form.wufoo .info h1, form.wufoo .info h2 {
-  font:700 19px/1.3 Arial,Helvetica,sans-serif !important;
-  color:var(--navy) !important;
-  margin:0 0 5px !important;
-  text-align:left !important;
+form.wufoo .info div, form.wufoo .info p {
+  color:#294465 !important; font:400 12px/1.5 Arial,Helvetica,sans-serif !important;
+  text-align:center !important; margin:0 !important; padding:0 !important;
 }
-form.wufoo .info p, form.wufoo .info div {
-  font:400 12px/1.45 Arial,Helvetica,sans-serif !important;
-  color:#50647b !important;
-  margin:0 !important;
-  text-align:left !important;
-}
-/* Keep native field widths and controls; adjust only vertical rhythm. */
+form.wufoo ul { padding-top:0 !important; }
 form.wufoo li, form.wufoo li.focused {
   background:transparent !important;
-  padding-top:5px !important;
-  padding-bottom:5px !important;
+  padding-top:5px !important; padding-bottom:5px !important;
   margin-bottom:0 !important;
 }
 form.wufoo label.desc, form.wufoo legend.desc {
-  font:600 12px/1.35 Arial,Helvetica,sans-serif !important;
-  color:var(--navy) !important;
-  margin-bottom:4px !important;
+  color:#102650 !important; font:700 12px/1.35 Arial,Helvetica,sans-serif !important;
+  margin-bottom:3px !important;
 }
-form.wufoo input.text, form.wufoo input.password,
-form.wufoo textarea.textarea, form.wufoo select.select {
-  background-color:#fff !important;
-  color:var(--navy) !important;
-  border:1px solid #bfcee0 !important;
-  border-radius:5px !important;
+form.wufoo li span label, form.wufoo li span, form.wufoo .subfield label {
+  color:#536b88 !important; font-size:10px !important;
 }
-form.wufoo .req { color:#d9273f !important; }
-form.wufoo .buttons { background:transparent !important; }
+form.wufoo input.text,form.wufoo input.password,form.wufoo textarea.textarea,form.wufoo select.select {
+  background:#fff !important; color:#102650 !important;
+  border:1px solid #bfd2e7 !important; border-radius:5px !important;
+  box-shadow:none !important; font:12px Arial,Helvetica,sans-serif !important;
+  min-height:28px !important;
+}
+form.wufoo input.text:focus,form.wufoo textarea.textarea:focus,form.wufoo select.select:focus {
+  border-color:#07538d !important; outline:2px solid #c5e3f7 !important;
+}
+form.wufoo .buttons { background:transparent !important; padding:12px 20px 20px !important; }
 form.wufoo input.btTxt {
-  background:var(--blue) !important;
-  color:#fff !important;
-  border:0 !important;
-  border-radius:22px !important;
-  padding:10px 24px !important;
-  font-weight:700 !important;
+  background:#07538d !important; color:#fff !important; border:0 !important;
+  border-radius:22px !important; padding:12px 25px !important;
+  font:bold 13px Arial,Helvetica,sans-serif !important; cursor:pointer !important;
 }
-@media(max-width:600px) {
-  #container { width:calc(100% - 12px) !important; margin:6px auto !important; }
-  form.wufoo .info h1, form.wufoo .info h2 { font-size:17px !important; }
+form.wufoo input.btTxt:hover { background:#102650 !important; }
+@media(max-width:700px) {
+  #container { margin-top:calc((100vw - 12px)*.414 + 14px) !important; width:calc(100% - 22px) !important; }
+  #container:before { width:calc(100vw - 12px) !important; }
+  form.wufoo .info h1,form.wufoo .info h2 { font-size:17px !important; }
+  body { background-attachment:scroll !important; }
 }
