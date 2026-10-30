@@ -1,2 +1,64 @@
-/* YPFDJ Euro Conference 2027 */
-/* Custom Wufoo theme - coming next */
+/* 21st YPFDJ Euro Conference — Wufoo visual theme
+   Separate from eritrea-wufoo-theme.css; no form fields or logic altered. */
+:root { --ypfdj-navy:#102d50; --ypfdj-blue:#07538d; --ypfdj-border:#c9d7e5; }
+html { background:#e7edf3 !important; }
+body {
+  background:linear-gradient(135deg, #e8f0f8 0%, #d7e8f4 48%, #f8ede2 100%) !important;
+  color:var(--ypfdj-navy) !important;
+  min-height:100vh;
+}
+#container {
+  max-width:760px;
+  width:calc(100% - 28px);
+  margin:24px auto !important;
+  background:#fff !important;
+  border:1px solid #dbe3ec !important;
+  border-radius:12px !important;
+  box-shadow:0 12px 42px rgba(15,43,72,.14) !important;
+  overflow:hidden;
+}
+/* Hosted image used as a header background; existing Wufoo header text remains accessible. */
+#header {
+  background:#dbeaf7 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png') center center / cover no-repeat !important;
+  min-height:230px;
+  border:0 !important;
+  padding:0 !important;
+}
+/* Hide only Wufoo's placeholder header text visually, not form questions.
+   Remove this rule if your live form's title needs to appear over the banner. */
+#header h2, #header p { position:absolute !important; left:-10000px !important; }
+form.wufoo { background:#fff !important; color:var(--ypfdj-navy) !important; }
+form.wufoo li, form.wufoo li.focused, form.wufoo .buttons { background:transparent !important; }
+form.wufoo label.desc, form.wufoo legend.desc, form.wufoo .section h3,
+form.wufoo .section div, form.wufoo li span, form.wufoo li div,
+form.wufoo .instruct, form.wufoo .instruct small { color:var(--ypfdj-navy) !important; }
+form.wufoo label.desc, form.wufoo legend.desc { font-weight:650 !important; }
+form.wufoo input.text, form.wufoo textarea.textarea, form.wufoo select.select {
+  background:#fbfdff !important;
+  border:1px solid var(--ypfdj-border) !important;
+  border-radius:6px !important;
+  color:#152c45 !important;
+  box-shadow:none !important;
+  min-height:30px;
+  padding:5px 7px !important;
+  box-sizing:border-box;
+}
+form.wufoo input.text:focus, form.wufoo textarea.textarea:focus, form.wufoo select.select:focus {
+  border-color:#2379b9 !important;
+  outline:2px solid rgba(35,121,185,.18) !important;
+}
+form.wufoo .section { border-top:1px solid #e4eaf0 !important; }
+form.wufoo .buttons input.btTxt {
+  background:var(--ypfdj-blue) !important;
+  color:#fff !important;
+  border:0 !important;
+  border-radius:25px !important;
+  padding:11px 26px !important;
+  font-weight:700 !important;
+  cursor:pointer;
+}
+form.wufoo .buttons input.btTxt:hover { background:#063d69 !important; }
+@media (max-width:600px) {
+  #container { width:calc(100% - 16px); margin:8px auto !important; }
+  #header { min-height:145px; background-size:cover !important; }
+}
