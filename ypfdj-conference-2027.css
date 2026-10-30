@@ -94,3 +94,25 @@ form.wufoo li span label, form.wufoo .subfield label {
 /* Preserve Wufoo's own input layout and widths. */
 form.wufoo input.text, form.wufoo input.password,
 form.wufoo textarea.textarea, form.wufoo select.select {
+/* Final adjustment: hide Wufoo branding above conference banner */
+#logo,
+#header #logo,
+#container > #logo,
+#container > a[href*="wufoo.com"] {
+  display: none !important;
+}
+
+/* Remove empty space above the conference banner */
+#header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#container {
+  padding-top: 0 !important;
+}
+
+/* Let the conference banner follow the rounded top corners */
+#header::before {
+  border-radius: 12px 12px 0 0 !important;
+}
