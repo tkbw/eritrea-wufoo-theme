@@ -400,3 +400,33 @@ form.wufoo #fo481i267 > label.desc {
   max-width:100% !important;
   white-space:normal !important;
 }
+
+/* V35: compact question typography to fit the help icon on one line. */
+@media (min-width:480px) {
+  #container form.wufoo li > label.desc,
+  #container form.wufoo li > fieldset > legend.desc {
+    font-size:11px !important;
+    line-height:1.5 !important;
+  }
+  #container form.wufoo #fo481i267 > label.desc,
+  #container form.wufoo #fo481i389 > label.desc,
+  #container form.wufoo #fo481i390 > label.desc {
+    font-size:10px !important;
+    letter-spacing:-0.15px !important;
+    white-space:nowrap !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+  #container form.wufoo li > label.desc > p.user-instructions {
+    display:inline-block !important;
+    float:none !important;
+    position:static !important;
+    margin-left:3px !important;
+    margin-right:2px !important;
+    vertical-align:middle !important;
+  }
+}
+/* Keep the original mobile wrapping behavior on very narrow screens. */
+@media (max-width:479px) {
+  #container form.wufoo li > label.desc { font-size:11px !important; }
+}
