@@ -430,3 +430,12 @@ form.wufoo #fo481i267 > label.desc {
 @media (max-width:479px) {
   #container form.wufoo li > label.desc { font-size:11px !important; }
 }
+/* ALL FORM QUESTIONS — CHANGE SIZE HERE */
+form.wufoo li > label.desc,
+form.wufoo li > legend.desc,
+form.wufoo li > fieldset > legend.desc,
+form.wufoo #fo481i267 > label.desc,
+form.wufoo #fo481i389 > label.desc,
+form.wufoo #fo481i390 > label.desc {
+    font-size: 12px !important;
+}
