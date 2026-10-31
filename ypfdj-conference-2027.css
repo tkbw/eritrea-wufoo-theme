@@ -343,3 +343,60 @@ form.wufoo .subfield label {
   form.wufoo #fo481i389 > label.desc,
   form.wufoo #fo481i390 > label.desc { font-size:11px !important; }
 }
+
+/* V34: Actual inspected Wufoo markup:
+   <label class="desc">Question <span class="req">*</span>
+     <p class="user-instructions floatInstructionRight floatInstructionTop">...</p>
+   </label>
+   Wufoo floats that P, causing the help icon to wrap below the text.
+   Make it an inline element in the label's text flow instead. */
+form.wufoo li > label.desc {
+  display:block !important;
+  float:none !important;
+  clear:both !important;
+  width:auto !important;
+  max-width:100% !important;
+  white-space:normal !important;
+}
+form.wufoo li > label.desc > p.user-instructions,
+form.wufoo li > label.desc > p[class*="floatInstruction"] {
+  display:inline-block !important;
+  float:none !important;
+  clear:none !important;
+  position:static !important;
+  width:18px !important;
+  height:18px !important;
+  min-width:18px !important;
+  min-height:18px !important;
+  padding:0 !important;
+  margin:0 2px 0 5px !important;
+  vertical-align:middle !important;
+  white-space:nowrap !important;
+  line-height:18px !important;
+  text-indent:-9999px !important;
+  overflow:hidden !important;
+  background-position:center center !important;
+  background-size:18px 18px !important;
+}
+/* Required marker is in the label already: show the original next to
+   the question rather than synthesizing another star after the label. */
+form.wufoo li > label.desc > span.req {
+  display:inline !important;
+  float:none !important;
+  position:static !important;
+  margin-left:3px !important;
+  color:#dc2636 !important;
+  font-weight:700 !important;
+}
+form.wufoo li:has(.req) > label.desc::after {
+  content:none !important;
+}
+/* Let long under-18 questions wrap naturally, with help icon attached
+   immediately after the last word instead of forced to a separate row. */
+form.wufoo #fo481i389 > label.desc,
+form.wufoo #fo481i390 > label.desc,
+form.wufoo #fo481i267 > label.desc {
+  width:100% !important;
+  max-width:100% !important;
+  white-space:normal !important;
+}
