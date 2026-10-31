@@ -239,3 +239,20 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     clear:both;
   }
 }
+/* Desktop: keep Date of Birth above its input boxes */
+@media (min-width: 651px) {
+  form.wufoo li.date > label.desc {
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
+  form.wufoo li.date > span {
+    display: inline-block !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: top !important;
+  }
+}
