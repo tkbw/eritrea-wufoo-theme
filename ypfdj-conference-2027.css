@@ -6,7 +6,7 @@
 
 html { background-color:#dbe9f2 !important; }
 html body#public, body {
-  background:#dbe9f2 url("https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background.jpg")
+  background:#dbe9f2 url("https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background2.jpg")
     center top / cover fixed no-repeat !important;
   color:var(--ypfdj-navy) !important;
   font-family:Arial,Helvetica,sans-serif !important;
@@ -64,7 +64,7 @@ html body#public #container > form.wufoo, #container > form.wufoo {
   margin:0 !important;
   padding:0 !important;
   border:0 !important;
-  background:#e7f0f7 url("https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner.png")
+  background:#e7f0f7 url("https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner2.png")
     center center / 100% 100% no-repeat !important;
 }
 
@@ -153,12 +153,51 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
   font:700 14px Arial,Helvetica,sans-serif !important;
   cursor:pointer !important;
 }
+/* Mobile refinements: keep the desktop design unchanged. */
 @media (max-width:650px) {
-  html body#public, body { background-attachment:scroll !important; }
+  html body#public, body {
+    background-attachment:scroll !important;
+    background-position:center top !important;
+    background-size:cover !important;
+  }
+  /* Reveal countryside on both sides of the white card. */
   html body#public #container, #container {
-    width:calc(100% - 12px) !important;
-    margin:6px auto 18px !important;
+    width:90% !important;
+    max-width:430px !important;
+    margin:10px auto 24px !important;
+    border-radius:12px !important;
+  }
+  #container form.wufoo .info {
+    padding:11px 12px 10px !important;
   }
   #container form.wufoo .info h1,
-  #container form.wufoo .info h2 { font-size:16px !important; }
+  #container form.wufoo .info h2 {
+    font-size:14px !important;
+    line-height:1.3 !important;
+    margin-bottom:5px !important;
+  }
+  #container form.wufoo .info p,
+  #container form.wufoo .info div {
+    font-size:11px !important;
+    line-height:1.4 !important;
+  }
+  form.wufoo li, form.wufoo li.focused {
+    box-sizing:border-box !important;
+    padding:5px 12px !important;
+  }
+  form.wufoo label.desc, form.wufoo legend.desc {
+    font-size:11px !important;
+    line-height:1.3 !important;
+    margin-bottom:3px !important;
+  }
+  /* Wufoo floats required markers to the far left on some mobile themes.
+     Replace their visual placement after the field label instead. */
+  form.wufoo li:has(.req) > label.desc::after,
+  form.wufoo li:has(.req) > fieldset > legend.desc::after {
+    content:" *" !important;
+    color:#dc2636 !important;
+    font-weight:700 !important;
+  }
+  form.wufoo li .req { display:none !important; }
+  form.wufoo .buttons { padding:12px 12px 18px !important; }
 }
