@@ -77,7 +77,8 @@ form.wufoo li, form.wufoo li.focused {
   margin-bottom:0 !important;
 }
 form.wufoo label.desc, form.wufoo legend.desc {
-  font:700 12px/1.35 Arial,Helvetica,sans-serif !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-weight:400 !important;
   color:var(--ypfdj-navy) !important;
   margin-bottom:3px !important;
 }
@@ -222,7 +223,7 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     padding:5px 12px !important;
   }
   form.wufoo label.desc, form.wufoo legend.desc {
-    font-size:12px !important;
+    font-size:11px !important;
     line-height:1.3 !important;
     margin-bottom:3px !important;
   }
@@ -274,176 +275,75 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
   }
 }
 
-/* V32: keep the question text and its help/required indicators together.
-   Do not change the input grids, date flex layout, or calendar. */
-@media (min-width:480px) {
-  /* Wufoo attaches question help affordances around its .desc labels.
-     Give the label its natural text width rather than a full row width. */
-  form.wufoo #fo481i267 > label.desc {
-    width:max-content !important;
-    max-width:calc(100% - 48px) !important;
-    justify-self:start !important;
-    white-space:nowrap !important;
-  }
-  /* Allow a long under-18 question to occupy the whole available row.
-     Slightly smaller type avoids wrapping the last word and the icon. */
-  form.wufoo #fo481i389 > label.desc,
-  form.wufoo #fo481i390 > label.desc {
-    width:max-content !important;
-    max-width:calc(100% - 32px) !important;
-    font-size:15px !important;
-    line-height:1.4 !important;
-    white-space:nowrap !important;
-  }
-  form.wufoo #fo481i267 > label.desc .help,
-  form.wufoo #fo481i267 > label.desc .tooltip,
-  form.wufoo #fo481i389 > label.desc .help,
-  form.wufoo #fo481i390 > label.desc .help {
-    display:inline-block !important;
-    vertical-align:baseline !important;
-    float:none !important;
-    white-space:nowrap !important;
-  }
-}
 
-/* V33 — stronger visual hierarchy, requested in annotated screenshot.
-   Keep all working field and calendar alignment unchanged. */
+/* ============================================================
+   QUESTION TEXT SIZE — CHANGE ONLY THIS NUMBER
+   Change 12px to 11px, 13px, 14px, etc.
+   This controls ALL form questions at every screen size.
+   It does NOT change the registration heading or field captions.
+   ============================================================ */
+:root { --question-text-size: 12px; }
+
+/* Registration heading remains larger than question labels. */
 #container form.wufoo .info h1,
 #container form.wufoo .info h2 {
   font-size:21px !important;
-  line-height:1.3 !important;
   font-weight:700 !important;
-}
-#container form.wufoo .info p,
-#container form.wufoo .info div {
-  font-size:12px !important;
-  line-height:1.5 !important;
-}
-form.wufoo label.desc,
-form.wufoo legend.desc,
-form.wufoo #fo481i389 > label.desc,
-form.wufoo #fo481i390 > label.desc {
-  font-size:12px !important;
-  line-height:1.4 !important;
-  font-weight:400 !important;
-  white-space:normal !important;
-}
-/* Keep all input captions smaller than their questions. */
-form.wufoo li span label,
-form.wufoo .subfield label {
-  font-size:10px !important;
 }
 @media (max-width:479px) {
   #container form.wufoo .info h1,
   #container form.wufoo .info h2 { font-size:17px !important; }
-  #container form.wufoo .info p,
-  #container form.wufoo .info div { font-size:10px !important; }
-  form.wufoo label.desc,
-  form.wufoo legend.desc,
-  form.wufoo #fo481i389 > label.desc,
-  form.wufoo #fo481i390 > label.desc { font-size:11px !important; }
 }
 
-/* V34: Actual inspected Wufoo markup:
-   <label class="desc">Question <span class="req">*</span>
-     <p class="user-instructions floatInstructionRight floatInstructionTop">...</p>
-   </label>
-   Wufoo floats that P, causing the help icon to wrap below the text.
-   Make it an inline element in the label's text flow instead. */
-form.wufoo li > label.desc {
-  display:block !important;
-  float:none !important;
-  clear:both !important;
-  width:auto !important;
-  max-width:100% !important;
+/* Unified question typography: specificity defeats Wufoo theme rules. */
+html body#public #container form.wufoo li > label.desc,
+html body#public #container form.wufoo li > legend.desc,
+html body#public #container form.wufoo li fieldset > legend.desc {
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:var(--question-text-size) !important;
+  font-weight:400 !important;
+  line-height:1.4 !important;
+  letter-spacing:normal !important;
   white-space:normal !important;
+  max-width:100% !important;
 }
-form.wufoo li > label.desc > p.user-instructions,
-form.wufoo li > label.desc > p[class*="floatInstruction"] {
+
+/* Wufoo's real help icon is a P element inside label.desc. */
+html body#public #container form.wufoo li > label.desc > p.user-instructions {
   display:inline-block !important;
   float:none !important;
   clear:none !important;
   position:static !important;
   width:18px !important;
   height:18px !important;
-  min-width:18px !important;
-  min-height:18px !important;
+  margin:0 2px 0 4px !important;
   padding:0 !important;
-  margin:0 2px 0 5px !important;
   vertical-align:middle !important;
-  white-space:nowrap !important;
-  line-height:18px !important;
-  text-indent:-9999px !important;
-  overflow:hidden !important;
-  background-position:center center !important;
+  background-position:center !important;
   background-size:18px 18px !important;
 }
-/* Required marker is in the label already: show the original next to
-   the question rather than synthesizing another star after the label. */
-form.wufoo li > label.desc > span.req {
+
+/* Keep the original required star beside the question text. */
+html body#public #container form.wufoo li > label.desc > span.req {
   display:inline !important;
   float:none !important;
   position:static !important;
-  margin-left:3px !important;
   color:#dc2636 !important;
-  font-weight:700 !important;
+  margin-left:3px !important;
 }
-form.wufoo li:has(.req) > label.desc::after {
+html body#public #container form.wufoo li > label.desc::after {
   content:none !important;
 }
-/* Let long under-18 questions wrap naturally, with help icon attached
-   immediately after the last word instead of forced to a separate row. */
-form.wufoo #fo481i389 > label.desc,
-form.wufoo #fo481i390 > label.desc,
-form.wufoo #fo481i267 > label.desc {
-  width:100% !important;
-  max-width:100% !important;
-  white-space:normal !important;
+/* For non-label-based required legends, show Wufoo's original marker. */
+html body#public #container form.wufoo li fieldset legend.desc span.req {
+  display:inline !important;
+  color:#dc2636 !important;
 }
 
-/* V35: compact question typography to fit the help icon on one line. */
-@media (min-width:480px) {
-  #container form.wufoo li > label.desc,
-  #container form.wufoo li > fieldset > legend.desc {
-    font-size:11px !important;
-    line-height:1.5 !important;
-  }
-  #container form.wufoo #fo481i267 > label.desc,
-  #container form.wufoo #fo481i389 > label.desc,
-  #container form.wufoo #fo481i390 > label.desc {
-    font-size:10px !important;
-    letter-spacing:-0.15px !important;
-    white-space:nowrap !important;
-    width:100% !important;
-    max-width:100% !important;
-  }
-  #container form.wufoo li > label.desc > p.user-instructions {
-    display:inline-block !important;
-    float:none !important;
-    position:static !important;
-    margin-left:3px !important;
-    margin-right:2px !important;
-    vertical-align:middle !important;
-  }
-}
-/* Keep the original mobile wrapping behavior on very narrow screens. */
-@media (max-width:479px) {
-  #container form.wufoo li > label.desc { font-size:11px !important; }
-}
-/* ALL FORM QUESTIONS — CHANGE SIZE HERE */
-form.wufoo li > label.desc,
-form.wufoo li > legend.desc,
-form.wufoo li > fieldset > legend.desc,
-form.wufoo #fo481i267 > label.desc,
-form.wufoo #fo481i389 > label.desc,
-form.wufoo #fo481i390 > label.desc {
-    font-size: 16px !important;
-}
-/* CHANGE ALL QUESTION TEXT SIZES HERE */
-#container form.wufoo li > label.desc,
-#container form.wufoo li > fieldset > legend.desc,
-#container form.wufoo #fo481i267 > label.desc,
-#container form.wufoo #fo481i389 > label.desc,
-#container form.wufoo #fo481i390 > label.desc {
-    font-size: 13px !important;
+/* Allow the long questions to use all available horizontal space. */
+html body#public #container form.wufoo #fo481i267 > label.desc,
+html body#public #container form.wufoo #fo481i389 > label.desc,
+html body#public #container form.wufoo #fo481i390 > label.desc {
+  width:100% !important;
+  max-width:100% !important;
 }
