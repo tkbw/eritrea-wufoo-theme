@@ -282,7 +282,7 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
    This controls ALL form questions at every screen size.
    It does NOT change the registration heading or field captions.
    ============================================================ */
-:root { --question-text-size: 12px; }
+:root { --question-text-size: 14px; }
 
 /* Registration heading remains larger than question labels. */
 #container form.wufoo .info h1,
