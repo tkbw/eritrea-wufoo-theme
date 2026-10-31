@@ -256,3 +256,29 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     vertical-align: top !important;
   }
 }
+/* Desktop: align First and Last Name fields */
+@media (min-width: 651px) {
+
+  /* Keep both name boxes on the same horizontal row */
+  #fo481i267 > span {
+    display: inline-block !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: top !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Keep First and Last labels underneath their boxes */
+  #fo481i267 > span > label {
+    display: block !important;
+    margin-top: 3px !important;
+  }
+
+  /* Keep the question above both boxes */
+  #fo481i267 > label.desc {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 6px !important;
+  }
+}
