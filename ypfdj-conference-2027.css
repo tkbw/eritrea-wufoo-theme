@@ -201,3 +201,41 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
   form.wufoo li .req { display:none !important; }
   form.wufoo .buttons { padding:12px 12px 18px !important; }
 }
+
+
+/* Desktop-only: required marker follows its question, not the left margin.
+   Keep mobile rules exactly as they are. */
+@media (min-width:651px) {
+  form.wufoo li:has(.req) > label.desc::after,
+  form.wufoo li:has(.req) > fieldset > legend.desc::after {
+    content:" *" !important;
+    color:#dc2636 !important;
+    font-weight:700 !important;
+  }
+  form.wufoo li .req { display:none !important; }
+
+  /* Keep the question text and Wufoo's help icon together. */
+  form.wufoo li > label.desc,
+  form.wufoo li > fieldset > legend.desc {
+    display:inline !important;
+    float:none !important;
+    vertical-align:middle !important;
+  }
+  form.wufoo li > a.help,
+  form.wufoo li > span.help,
+  form.wufoo li > a.tooltip,
+  form.wufoo li > span.tooltip {
+    display:inline-block !important;
+    float:none !important;
+    position:static !important;
+    vertical-align:middle !important;
+    margin-left:4px !important;
+  }
+  /* Fields begin on the next line after the label/help pair. */
+  form.wufoo li > div,
+  form.wufoo li > span.full,
+  form.wufoo li > span.left,
+  form.wufoo li > span.right {
+    clear:both;
+  }
+}
