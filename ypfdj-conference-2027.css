@@ -305,310 +305,41 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     white-space:nowrap !important;
   }
 }
-/* YPFDJ Euro Conference 2027 — clean stylesheet, 31 October 2026.
-   Replaces previous conflicting desktop patches. No form HTML is changed. */
-:root { --ypfdj-navy:#102650; --ypfdj-border:#c3d5e8; }
-html { background:#dbe9f2 !important; }
-html body#public, body {
-  background:#dbe9f2 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-italy-countryside-background2.jpg') center top / cover fixed no-repeat !important;
-  color:var(--ypfdj-navy) !important;
-  font-family:Arial,Helvetica,sans-serif !important;
-}
-html body#public #container, #container {
-  box-sizing:border-box !important;
-  width:calc(100% - 24px) !important;
-  max-width:560px !important;
-  margin:8px auto 30px !important;
-  padding:0 !important;
-  background:rgba(255,255,255,.97) !important;
-  border:0 !important;
-  border-radius:13px !important;
-  box-shadow:0 12px 38px rgba(15,38,65,.23) !important;
-  overflow:hidden !important;
-  position:relative !important;
-}
-/* Hide Wufoo branding, but not the real form title. */
-#container > h1#logo, #container > h1#logo > a,
-#container > #header { display:none !important; }
-#container > form.wufoo {
-  display:block !important;
-  margin:0 !important;
-  padding:0 !important;
-  background:transparent !important;
-  color:var(--ypfdj-navy) !important;
-}
-/* The one and only conference banner. */
-#container > form.wufoo::before {
-  content:"" !important;
-  display:block !important;
-  width:100% !important;
-  aspect-ratio:1857 / 768 !important;
-  margin:0 !important;
-  background:#e7f0f7 url('https://tkbw.github.io/eritrea-wufoo-theme/ypfdj-conference-banner2.png') center / 100% 100% no-repeat !important;
-}
-#container form.wufoo .info {
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  height:auto !important;
-  margin:0 0 5px !important;
-  padding:16px 18px 12px !important;
-  border:0 !important;
-  border-bottom:1px solid #e2eaf2 !important;
-  background:transparent !important;
-  text-align:center !important;
-}
+
+/* V33 — stronger visual hierarchy, requested in annotated screenshot.
+   Keep all working field and calendar alignment unchanged. */
 #container form.wufoo .info h1,
 #container form.wufoo .info h2 {
-  display:block !important;
-  font:700 18px/1.3 Arial,Helvetica,sans-serif !important;
-  color:var(--ypfdj-navy) !important;
-  text-align:center !important;
-  margin:0 0 7px !important;
-  padding:0 !important;
+  font-size:21px !important;
+  line-height:1.3 !important;
+  font-weight:700 !important;
 }
-#container form.wufoo .info div,
-#container form.wufoo .info p {
-  display:block !important;
-  font:400 12px/1.45 Arial,Helvetica,sans-serif !important;
-  color:#304b6a !important;
-  text-align:center !important;
-  margin:0 !important;
-  padding:0 !important;
+#container form.wufoo .info p,
+#container form.wufoo .info div {
+  font-size:12px !important;
+  line-height:1.5 !important;
 }
-form.wufoo ul { margin-top:0 !important; padding-top:0 !important; }
-form.wufoo li, form.wufoo li.focused {
-  background:transparent !important;
-  padding-top:6px !important;
-  padding-bottom:6px !important;
-  margin-bottom:0 !important;
+form.wufoo label.desc,
+form.wufoo legend.desc,
+form.wufoo #fo481i389 > label.desc,
+form.wufoo #fo481i390 > label.desc {
+  font-size:12px !important;
+  line-height:1.4 !important;
+  font-weight:400 !important;
+  white-space:normal !important;
 }
-form.wufoo label.desc, form.wufoo legend.desc {
-  font:700 12px/1.35 Arial,Helvetica,sans-serif !important;
-  color:var(--ypfdj-navy) !important;
-  margin-bottom:3px !important;
-}
-form.wufoo li span label, form.wufoo .subfield label {
+/* Keep all input captions smaller than their questions. */
+form.wufoo li span label,
+form.wufoo .subfield label {
   font-size:10px !important;
-  color:#506a89 !important;
 }
-form.wufoo input.text, form.wufoo input.password,
-form.wufoo textarea.textarea, form.wufoo select.select {
-  background:#fff !important;
-  color:var(--ypfdj-navy) !important;
-  border:1px solid var(--ypfdj-border) !important;
-  border-radius:5px !important;
-  box-shadow:none !important;
-  min-height:27px !important;
-  font:12px Arial,Helvetica,sans-serif !important;
-}
-form.wufoo input.text:focus, form.wufoo textarea.textarea:focus,
-form.wufoo select.select:focus {
-  border-color:#155995 !important;
-  outline:2px solid #d6e8f7 !important;
-}
-form.wufoo .req { color:#dc2636 !important; }
-form.wufoo .buttons { background:transparent !important; padding:12px 18px 20px !important; }
-form.wufoo input.btTxt, form.wufoo button[type="submit"] {
-  background:#073b79 !important;
-  color:#fff !important;
-  border:0 !important;
-  border-radius:24px !important;
-  padding:11px 24px !important;
-  font:700 14px Arial,Helvetica,sans-serif !important;
-  cursor:pointer !important;
-}
-/* All layout repairs are DESKTOP ONLY. The mobile rules below stay compact. */
-@media (min-width:480px) {
-  /* Wufoo name field has a question followed by two direct child spans.
-     Grid prevents help markers or floats from shifting the Last box. */
-  form.wufoo #fo481i267 {
-    display:grid !important;
-    grid-template-columns:126px 174px minmax(0,1fr) !important;
-    column-gap:6px !important;
-    align-items:start !important;
-  }
-  form.wufoo #fo481i267 > label.desc {
-    grid-column:1 / -1 !important;
-    grid-row:1 !important;
-    display:block !important;
-    width:auto !important;
-    float:none !important;
-    clear:none !important;
-    margin:0 0 5px !important;
-  }
-  form.wufoo #fo481i267 > span:not(.req) {
-    display:block !important;
-    float:none !important;
-    clear:none !important;
-    width:auto !important;
-    margin:0 !important;
-    padding:0 !important;
-    align-self:start !important;
-  }
-  form.wufoo #fo481i267 > span:not(.req):nth-of-type(1) { grid-column:1 !important; grid-row:2 !important; }
-  form.wufoo #fo481i267 > span:not(.req):nth-of-type(2) { grid-column:2 !important; grid-row:2 !important; }
-  form.wufoo #fo481i267 > span input.text { box-sizing:border-box !important; width:100% !important; margin:0 !important; }
-  form.wufoo #fo481i267 > span > label { display:block !important; margin-top:3px !important; }
-
-  /* The inspected date element is li.date.eurodate. Keep its question
-     above the date inputs and the calendar alongside YYYY. */
-  form.wufoo li.date.eurodate {
-    display:flex !important;
-    flex-flow:row wrap !important;
-    align-items:flex-start !important;
-    column-gap:5px !important;
-  }
-  form.wufoo li.date.eurodate > label.desc {
-    display:block !important;
-    flex:0 0 100% !important;
-    width:100% !important;
-    float:none !important;
-    clear:both !important;
-    margin:0 0 5px !important;
-  }
-  form.wufoo li.date.eurodate > span {
-    display:block !important;
-    float:none !important;
-    clear:none !important;
-    width:auto !important;
-    margin:0 !important;
-    vertical-align:top !important;
-  }
-  form.wufoo li.date.eurodate > span.symbol { padding-top:7px !important; }
-  form.wufoo li.date.eurodate > span[id^="cal"] {
-    display:block !important;
-    align-self:flex-start !important;
-    padding-top:3px !important;
-    margin-left:2px !important;
-  }
-
-  /* Show the required star next to the label, not in the left margin. */
-  form.wufoo li:has(.req) > label.desc::after {
-    content:" *" !important;
-    color:#dc2636 !important;
-    font-weight:700 !important;
-  }
-  form.wufoo li .req { display:none !important; }
-  /* A help icon generated inside a label follows its text naturally.
-     Don't force unrelated spans to clear or float. */
-  form.wufoo label.desc .tooltip,
-  form.wufoo label.desc .help,
-  form.wufoo label.desc a {
-    display:inline-block !important;
-    float:none !important;
-    vertical-align:middle !important;
-    margin-left:4px !important;
-  }
-}
-/* Preserve the compact mobile presentation and visible background sides. */
 @media (max-width:479px) {
-  html body#public, body {
-    background-attachment:scroll !important;
-    background-position:center top !important;
-    background-size:cover !important;
-  }
-  html body#public #container, #container {
-    width:90% !important;
-    max-width:430px !important;
-    margin:10px auto 24px !important;
-    border-radius:12px !important;
-  }
-  #container form.wufoo .info { padding:11px 12px 10px !important; }
-  #container form.wufoo .info h1, #container form.wufoo .info h2 {
-    font-size:14px !important;
-    line-height:1.3 !important;
-    margin-bottom:5px !important;
-  }
-  #container form.wufoo .info p, #container form.wufoo .info div {
-    font-size:11px !important;
-    line-height:1.4 !important;
-  }
-  form.wufoo li, form.wufoo li.focused {
-    box-sizing:border-box !important;
-    padding:5px 12px !important;
-  }
-  form.wufoo label.desc, form.wufoo legend.desc {
-    font-size:11px !important;
-    line-height:1.3 !important;
-    margin-bottom:3px !important;
-  }
-  form.wufoo li:has(.req) > label.desc::after,
-  form.wufoo li:has(.req) > fieldset > legend.desc::after {
-    content:" *" !important;
-    color:#dc2636 !important;
-    font-weight:700 !important;
-  }
-  form.wufoo li .req { display:none !important; }
-  form.wufoo .buttons { padding:12px 12px 18px !important; }
-}
-
-/* V31: Narrow desktop / tablet widths (including the 505px screenshot). */
-@media (min-width:480px) and (max-width:650px) {
-  html body#public #container, #container {
-    width:80% !important;
-    max-width:560px !important;
-  }
-  form.wufoo li, form.wufoo li.focused {
-    box-sizing:border-box !important;
-    padding-left:12px !important;
-    padding-right:12px !important;
-  }
-  form.wufoo #fo481i267 {
-    grid-template-columns:minmax(0, 126px) minmax(0, 174px) !important;
-  }
-}
-/* Prevent help indicators from wrapping due to fixed-width Wufoo labels. */
-@media (min-width:480px) {
-  form.wufoo li > label.desc {
-    width:max-content !important;
-    max-width:100% !important;
-    min-height:0 !important;
-    white-space:normal !important;
-  }
-  form.wufoo #fo481i267 > label.desc,
-  form.wufoo li.date.eurodate > label.desc {
-    width:100% !important;
-    max-width:100% !important;
-  }
-  form.wufoo li.date.eurodate > span[id^="cal"] {
-    display:inline-flex !important;
-    position:static !important;
-    align-self:flex-start !important;
-    margin:2px 0 0 2px !important;
-    padding:0 !important;
-    flex:0 0 auto !important;
-  }
-}
-
-/* V32: keep the question text and its help/required indicators together.
-   Do not change the input grids, date flex layout, or calendar. */
-@media (min-width:480px) {
-  /* Wufoo attaches question help affordances around its .desc labels.
-     Give the label its natural text width rather than a full row width. */
-  form.wufoo #fo481i267 > label.desc {
-    width:max-content !important;
-    max-width:calc(100% - 48px) !important;
-    justify-self:start !important;
-    white-space:nowrap !important;
-  }
-  /* Allow a long under-18 question to occupy the whole available row.
-     Slightly smaller type avoids wrapping the last word and the icon. */
+  #container form.wufoo .info h1,
+  #container form.wufoo .info h2 { font-size:17px !important; }
+  #container form.wufoo .info p,
+  #container form.wufoo .info div { font-size:10px !important; }
+  form.wufoo label.desc,
+  form.wufoo legend.desc,
   form.wufoo #fo481i389 > label.desc,
-  form.wufoo #fo481i390 > label.desc {
-    width:max-content !important;
-    max-width:calc(100% - 32px) !important;
-    font-size:15px !important;
-    line-height:1.4 !important;
-    white-space:nowrap !important;
-  }
-  form.wufoo #fo481i267 > label.desc .help,
-  form.wufoo #fo481i267 > label.desc .tooltip,
-  form.wufoo #fo481i389 > label.desc .help,
-  form.wufoo #fo481i390 > label.desc .help {
-    display:inline-block !important;
-    vertical-align:baseline !important;
-    float:none !important;
-    white-space:nowrap !important;
-  }
+  form.wufoo #fo481i390 > label.desc { font-size:11px !important; }
 }
