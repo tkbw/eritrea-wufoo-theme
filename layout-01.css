@@ -402,3 +402,27 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
 .wufoo .wufoo-dropdown-menu li {
   white-space: nowrap !important;
 }
+/* Compact spacing in all Wufoo dropdown menus */
+.wufoo .wufoo-dropdown-menu li {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 6px 14px !important;
+  min-height: 0 !important;
+  line-height: 1.35 !important;
+}
+
+/* Highlight the option under the mouse or keyboard focus */
+.wufoo .wufoo-dropdown-menu li:hover,
+.wufoo .wufoo-dropdown-menu li:focus-visible,
+.wufoo .wufoo-dropdown-menu li:focus-within {
+  background-color: #e5f0ff !important;
+  color: #123b63 !important;
+  cursor: pointer;
+}
+
+/* Keep a selected option highlighted, if Wufoo marks it this way */
+.wufoo .wufoo-dropdown-menu li[aria-selected="true"] {
+  background-color: #cce2ff !important;
+  color: #123b63 !important;
+  font-weight: 600 !important;
+}
