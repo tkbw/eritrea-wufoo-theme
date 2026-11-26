@@ -410,7 +410,7 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
   margin: 0 !important;
   padding: 3px 10px !important;
   line-height: 1.25 !important;
-
+}
 /* Highlight the option under the mouse or keyboard focus */
 .wufoo .wufoo-dropdown-menu li:hover,
 .wufoo .wufoo-dropdown-menu li:focus-visible,
