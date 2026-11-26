@@ -454,3 +454,10 @@ form.wufoo > ul {
     text-align: center;
   }
 }
+@media (max-width: 600px) {
+  form.wufoo li:has(input.field.text[size="4"]) .datepicker {
+    clear: none !important;
+    float: left !important;
+    margin: 4px 0 0 6px !important;
+  }
+}
