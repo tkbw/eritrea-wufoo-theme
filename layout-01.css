@@ -432,19 +432,23 @@ form.wufoo > ul {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
-/* Make date fields easier to read and enter on mobile */
+/* Mobile: compact DD / MM / YYYY fields */
 @media (max-width: 600px) {
   form.wufoo input.field.text[size="2"] {
     box-sizing: border-box !important;
-    width: 3.5em !important;
-    min-width: 3.5em !important;
+    width: 44px !important;
+    min-width: 0 !important;
+    padding: 6px 4px !important;
     font-size: 16px !important;
+    text-align: center;
   }
 
   form.wufoo input.field.text[size="4"] {
     box-sizing: border-box !important;
-    width: 5em !important;
-    min-width: 5em !important;
+    width: 64px !important;
+    min-width: 0 !important;
+    padding: 6px 4px !important;
     font-size: 16px !important;
+    text-align: center;
   }
 }
