@@ -402,14 +402,14 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
 .wufoo .wufoo-dropdown-menu li {
   white-space: nowrap !important;
 }
-/* Compact spacing in all Wufoo dropdown menus */
-.wufoo .wufoo-dropdown-menu li {
+/* Compact rows in Wufoo custom dropdowns */
+.redesigned-theme-2018 .wufoo ul.wufoo-dropdown-menu > li {
   box-sizing: border-box !important;
   height: auto !important;
   min-height: 0 !important;
   margin: 0 !important;
-  padding: 3px 10px !important;
-  line-height: 1.25 !important;
+  padding: 3px 12px !important;
+  line-height: 20px !important;
 }
 /* Highlight the option under the mouse or keyboard focus */
 .wufoo .wufoo-dropdown-menu li:hover,
