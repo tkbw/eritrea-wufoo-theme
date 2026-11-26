@@ -209,7 +209,7 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     border-radius:12px !important;
   }
     /* Give Date of Birth room for the calendar */
-  form.wufoo li#fo46117 {
+  form.wufoo li.date.eurodate {
     width: 100% !important;
   } 
   #container form.wufoo .info { padding:11px 12px 10px !important; }
