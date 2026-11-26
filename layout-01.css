@@ -369,3 +369,36 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
   background-color: #fff;
   white-space: nowrap;
 }
+/* Fix Wufoo custom dropdown widths */
+.wufoo .wufoo-dropdown {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.wufoo .wufoo-dropdown-control {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.wufoo .wufoo-dropdown-control-input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  color: #222 !important;
+  opacity: 1 !important;
+}
+
+.wufoo .wufoo-dropdown-menu {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+.wufoo .wufoo-dropdown-menu li {
+  white-space: nowrap !important;
+}
