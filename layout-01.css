@@ -347,3 +347,25 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
   width:100% !important;
   max-width:100% !important;
 }
+/* Wufoo: make dropdowns wide and selected text visible */
+.wufoo select {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 44px;
+  padding: 8px 12px !important;
+  font: inherit !important;
+  color: #222 !important;
+  background-color: #fff !important;
+  white-space: nowrap !important;
+  text-indent: 0 !important;
+  opacity: 1 !important;
+}
+
+.wufoo select option {
+  color: #222;
+  background-color: #fff;
+  white-space: nowrap;
+}
