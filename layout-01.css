@@ -434,20 +434,22 @@ form.wufoo > ul {
 }
 /* Mobile: compact DD / MM / YYYY fields */
 @media (max-width: 600px) {
+  /* Day and Month: two digits */
   form.wufoo input.field.text[size="2"] {
     box-sizing: border-box !important;
-    width: 44px !important;
+    width: 36px !important;
     min-width: 0 !important;
-    padding: 6px 4px !important;
+    padding: 6px 2px !important;
     font-size: 16px !important;
     text-align: center;
   }
 
+  /* Year: four digits */
   form.wufoo input.field.text[size="4"] {
     box-sizing: border-box !important;
-    width: 64px !important;
+    width: 58px !important;
     min-width: 0 !important;
-    padding: 6px 4px !important;
+    padding: 6px 2px !important;
     font-size: 16px !important;
     text-align: center;
   }
