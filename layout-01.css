@@ -426,3 +426,9 @@ html body#public #container form.wufoo #fo481i390 > label.desc {
   color: #123b63 !important;
   font-weight: 600 !important;
 }
+/* Add breathing room beside the form fields */
+form.wufoo > ul {
+  box-sizing: border-box;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
