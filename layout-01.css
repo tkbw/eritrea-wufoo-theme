@@ -208,6 +208,10 @@ form.wufoo input.btTxt, form.wufoo button[type="submit"] {
     margin:10px auto 24px !important;
     border-radius:12px !important;
   }
+    /* Give Date of Birth room for the calendar */
+  form.wufoo li#fo46117 {
+    width: 100% !important;
+  } 
   #container form.wufoo .info { padding:11px 12px 10px !important; }
   #container form.wufoo .info h1, #container form.wufoo .info h2 {
     font-size:14px !important;
@@ -468,11 +472,5 @@ form.wufoo > ul {
   form.wufoo #pick7 {
     display: block;
     margin: 0 !important;
-  }
-}
-/* Mobile: give Date of Birth room for the calendar icon */
-@media (max-width: 479px) {
-  form.wufoo li#fo46117 {
-    width: 100% !important;
   }
 }
