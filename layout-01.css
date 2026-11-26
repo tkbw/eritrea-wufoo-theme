@@ -470,3 +470,9 @@ form.wufoo > ul {
     margin: 0 !important;
   }
 }
+/* Mobile: give Date of Birth room for the calendar icon */
+@media (max-width: 479px) {
+  form.wufoo li#fo46117 {
+    width: 100% !important;
+  }
+}
